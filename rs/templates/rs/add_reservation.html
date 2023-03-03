@@ -1,0 +1,27 @@
+{% extends 'rs/base.html' %}
+
+{% block content%}
+<p class="">
+    REZERWACJA SALI
+</p>
+
+<p>
+    Sala, którą chcesz zarezerwować to:
+    <b>{{ room.name }}</b>
+</p>
+
+<div class="">
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <div class="">
+            <button type="submit" class="">Zarezerwuj Pokój</button>
+            <a href="{% url 'show_rooms' %}" class="">Nie rezerwuj sali</N></a>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

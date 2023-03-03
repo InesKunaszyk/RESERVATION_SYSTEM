@@ -1,0 +1,23 @@
+{% extends 'rs/base.html' %}
+
+{% block content%}
+<p class="">
+    ANULOWANIE REZERWACJI
+</p>
+<div class="">
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        Czy na pewno chcesz usunąć rezerwacje dla sali
+        <b>{{reservation.room.name}}</b>
+        w dniu <b>{{reservation.date}}</b>?
+
+        <div class="">
+            <button type="submit" class="">Yes, cancel the booking</button>
+            <a href="{% url 'show_rooms' %}" class="">Anuluj</a>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

@@ -1,31 +1,33 @@
+{% load static %}
 <html>
 
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SYSTEM REZERWACJI SAL</title>
-        {% include 'reservation/head.html' %}
         {% block head %}
         {% endblock %}
-        <link rel='' href=''>
+        <link rel='stylesheet' href='{% static "rs/style.css" %}'>
     </head>
 
     <body>
-    <!-- //--------------------------- header content -------------------------// -->
-        {% block header %}
-        {% include 'reservation/nav.html' %}
-        {% endblock header %}
-    <!-- //--------------------------- end header content -------------------------// -->
+        <div class="header">
+            {% include 'rs/head.html' %}
+        </div>
 
-    <!-- //--------------------------- block content -------------------------// -->
-        {% block content %}
-        {% endblock %}
-    <!-- //--------------------------- end block content -------------------------// -->
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
 
     <!-- //--------------------------- footer content -------------------------// -->
         <footer>
+            <div class="footer">
+                System Rezerwacji Sal opracowany przez Ines Kunaszyk
+            </div>
         </footer>
     <!-- //--------------------------- end footer content -------------------------// -->
 
     </body>
 </html>
+

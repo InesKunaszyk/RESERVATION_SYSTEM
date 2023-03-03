@@ -1,0 +1,29 @@
+{% extends 'rs/base.html' %}
+
+{% block head %}
+<title>USUWANIE SALI</title>
+{% endblock head %}
+
+{% block content %}
+<p class="">
+    Usuń salę
+</p>
+
+<div class="room_form">
+    <form action="" method="POST">
+        {% csrf_token%}
+
+        <p>
+            Czy na pewno chcesz usunąć salę:
+            <b>Sala: {{room.name}}, Ilość miejsc: {{room.capacity }}</b>,
+            wraz z jej rezerwacjami z bazy danych ?
+        </p>
+        <div class="">
+                <button type="submit" class="button">Tak, usuń salę</button>
+                <a href="{% url 'show_rooms' %}" class="button">Anuluj</a>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
+

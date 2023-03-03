@@ -1,0 +1,26 @@
+{% extends 'rs/base.html' %}
+
+{% block head %}
+<title>DODAWANIE SALI</title>
+{% endblock head %}
+
+{% block content %}
+<p class="">
+    Dodaj nową salę:
+</p>
+
+<div class="">
+    <form action="" method="POST">
+        {% csrf_token%}
+
+        {{form.as_p}}
+
+        <div>
+            <button type="submit">{{text}}</button>
+        <a href="{% url 'show_rooms' %}" class="button">Anuluj</a>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
+

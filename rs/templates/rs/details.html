@@ -1,0 +1,18 @@
+{% extends 'rs/base.html' %}
+
+{% block head %}
+<title>Szczegóły sali</title>
+{% endblock head %}
+
+{% block content %}
+
+<h3>Szczegóły sali {{room.name}}</h3>
+    <ul><p>Ilość miejsc: {{room.capacity}}</p></ul>
+    <ul>Czy w sali jest projektor?: {{room.projector}}</ul>
+
+<button class="button"><a href="{% url 'edit_room' room.pk %}">Edycja sali</a></button>
+<button class="button"><a href="{% url 'delete_room' room.pk %}">Usuń salę</a></button>
+<button class="button"><a href="{% url 'reserve_room' room.pk %}">Zarezerwuj salę</a></button>
+
+
+{% endblock content %}

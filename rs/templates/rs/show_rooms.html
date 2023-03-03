@@ -1,0 +1,154 @@
+{% extends 'rs/base.html' %}
+{% load static %}
+
+{% block head %}
+<title>LISTA SAL</title>
+{% endblock head %}
+
+
+{% block content%}
+<div class="filter_bar">
+    <span class="filter_header">
+        <img src="{% static 'rs/mag-glass.svg' %}" alt="Search icon">
+        Filter rooms
+    </span>
+    <!-- room filtering form -->
+    <form action="" method="GET" class="filter_form">
+        <label>
+            Room name:
+            <input
+                type="text"
+                name="filter_name"
+                value="{{ filter.filter_name }}"
+            >
+        </label>
+        <label>
+            Capacity from:
+            <input
+                type="number"
+                step="1"
+                pattern="\d+"
+                name="filter_cap_from"
+                value="{{ filter.filter_cap_from }}"
+            >
+            to:
+            <input
+                type="number"
+                step="1"
+                pattern="\d+"
+                name="filter_cap_to"
+                value="{{ filter.filter_cap_to }}"
+            >
+        </label>
+        <label>
+            <input
+                type="checkbox"
+                name="filter_projector"
+                value="true"
+                {% if filter.filter_projector %}
+                checked
+                {% endif %}
+            > projector
+        </label>
+        <label>
+            Free on:
+            <input
+                type="date"
+                name="filter_date"
+                value="{{ filter.filter_date }}"
+            >
+        </label>
+        <button
+            type="submit"
+            name="filter"
+            value="apply"
+            class="button">
+            <img src="{% static 'rs/search.svg' %}" alt="Search">
+            Apply filter
+        </button>
+        <button
+            type="submit"
+            name="filter"
+            value="clear"
+            class="button">
+            <img src="{% static 'rs/cancel.svg' %}" alt="Cancel">
+            Clear filter
+        </button>
+    </form>
+</div>
+
+<p class="page_header">
+    Available conference rooms:
+</p>
+<ul class="room_list">
+    <li class="room_data">
+        <div class="room_data room_header">
+            <div class="room_name_hdr">
+                Name
+            </div>
+            <div class="room_cap_hdr">
+                Capacity
+            </div>
+            <div class="room_projector_hdr">
+                Projector
+            </div>
+        </div> <!-- room_data -->
+    </li>
+    {% for room in rooms %}
+        <li class="room_data">
+            <div class="room_data">
+                <div class="room_name">
+                    {{ room.name }}
+                </div>
+                <div class="room_cap">
+                    {{ room.capacity }}
+                </div>
+                <div class="room_projector">
+                    {% if room.projector %}
+                        <img src="{% static 'rs/check_circle.svg' %}" alt="Check mark">
+                    {% endif %}
+                </div>
+                <div class="room_actions">
+                    <a
+                        href="{% url 'edit_room' room.pk %}"
+                        class="button">
+                        Edit
+                    </a>
+                    <a
+                        href="{% url 'delete_room' room.pk %}"
+                        class="button">
+                        Delete
+                    </a>
+                </div>
+            </div> <!-- room_data -->
+            <div>
+                <span>Booked on: </span>
+            </div>
+            <div class="reservations">
+                {% for r in room.reservations_dated %}
+                    <div class="reservation">
+                        {{ r.date }}
+
+                        <a
+                            class="button button_verysmall button_reservation"
+                            href="{% url 'cancel_reservation' r.pk %}">
+                            <img src="{% static 'rs/cancel.svg' %}" alt="Cancel">
+                            Cancel
+                        </a>
+                    </div>
+                {% endfor %}
+                <a
+                    class="button button_small"
+                    href="{% url 'reserve_room' room.pk %}">
+                    Book
+                </a>
+            </div> <!-- reservations -->
+        </li> <!-- room_data -->
+    {% empty %}
+        <li class="empty_msg">Sorry, no rooms to show.</li>
+    {% endfor %}
+</ul> <!-- room_list -->
+<div class="bottom_actions">
+    <a href="{% url 'add_room' %}" class="button">Add a new room</a>
+</div>
+{% endblock %}

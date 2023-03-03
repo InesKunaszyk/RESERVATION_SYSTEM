@@ -1,0 +1,304 @@
+/* General item styling */
+
+body {
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.button {
+    background-color: white;
+    border: 1px solid darkblue;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px gray;
+    padding: 0.2em 1em 0.2em 1em;
+    color: lightskyblue;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 100%;
+    font-family: inherit;
+}
+
+.button:hover {
+    box-shadow: 0 2px 4px gray;
+}
+
+.button:active {
+    box-shadow: 0 0 0 gray;
+    color: white;
+    background-color: lightskyblue;
+}
+
+.button img {
+    height: 1em;
+    vertical-align: middle;
+}
+
+.button_small {
+    font-size: small;
+}
+
+.button_verysmall {
+    font-size: smaller;
+    padding: 0.1em 0.5em 0.1em 0.5em;    
+}
+
+input[type="text"],input[type="number"],input[type="date"] {
+    background-color: white;
+    border: 1px solid darkblue;
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 6px;
+}
+
+textarea {
+    border: 1px solid lightskyblue;
+    border-radius: 6px;
+}
+
+div.form_submit {
+    margin-top: 2em;
+}
+
+div.form_submit button,a {
+    margin-right: 2em;
+}
+
+ul.errorlist {
+    list-style-type: none;
+    font-size: small;
+    font-weight: bold;
+    color: darkred;
+    margin-left: 0;
+}
+
+
+/* Header */
+
+div.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    border: 1px solid lightskyblue;
+    border-radius: 10px;
+    padding: 1em 2em 1em 2em;
+    margin: 1.5em 2em 1em 2em;
+    box-shadow: 0 2px 6px gray;
+}
+
+div.logo {
+    display: inline-block;
+}
+
+div.logo img {
+    height: 3em;
+}
+
+div.app_name {
+    display: inline-block;
+    color: darkblue;
+    font-size: 150%;
+    font-weight: bold;
+
+}
+div.footer {
+    display: inline-block;
+    color: darkblue;
+    font-size: 50%;
+
+}
+
+/* Content */
+div.content {
+    border: 1px solid lightskyblue;
+    border-radius: 10px;
+    padding: 2em 2em 2em 2em;
+    margin: 1.5em 2em 1em 2em;
+    box-shadow: 0 2px 6px gray;
+}
+
+.page_header {
+    color: steelblue;
+    text-shadow: 1px 1px 3px lightgray;
+    font-size: 125%;
+    font-weight: bold;
+}
+
+/* Room list */
+ul.room_list {
+    list-style: none;
+}
+
+div.room_data {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+div.reservations {
+    border-bottom: 1px dotted lightskyblue;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+div.room_data div {
+    display: inline-block;
+}
+
+div.room_header {
+    border-bottom: 1px dotted lightskyblue;
+}
+
+.room_name_hdr {
+    min-width: 30%;
+    font-weight: bold;
+    color: lightskyblue;
+}
+
+.room_cap_hdr {
+    min-width: 10%;
+    font-weight: bold;
+    color: lightskyblue;
+}
+
+.room_projector_hdr {
+    min-width: 10%;
+    font-weight: bold;
+    color: lightskyblue;
+}
+
+.room_name {
+    min-width: 30%;
+    font-weight: bold;
+}
+
+.room_cap {
+    min-width: 10%;
+}
+
+.room_projector {
+    min-width: 10%;
+}
+
+.room_projector img {
+    height: 1.5em;
+}
+
+.room_actions {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.bottom_actions {
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+div.reservations {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+div.reservation {
+    border: 1px dotted darkblue;
+    border-radius: 6px;
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+.button_reservation {
+    margin-right: 0;
+    margin-left: 2em;
+}
+
+
+/* Room list / filter bar */
+div.filter_bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 75%;
+    border-bottom: 1px solid darkblue;
+}
+
+.filter_header {
+    color: lightskyblue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.filter_header img {
+    height: 1em;
+}
+
+div.filter_bar form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+div.filter_bar label {
+    display: inline-block;
+}
+
+div.filter_bar input {
+    margin-left: 5px;
+}
+
+div.filter_bar input[type="text"] {
+    max-width: 8em;
+}
+
+div.filter_bar input[type="number"] {
+    max-width: 6em;
+}
+
+/* Add/edit room form */
+.room_form p {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.room_form label {
+    min-width: 25%;
+}
+
+.room_form #id_name {
+    width: 20em;
+}
+
+.room_form #id_capacity {
+    width: 8em;
+}
+
+.room_form input[type="checkbox"] {
+    width: 2em;
+    height: 2em;
+}
+
+/* Add reservation */
+
+.reservation_form select {
+    background-color: white;
+    border: 1px solid darkblue;
+    margin-right: 1em;
+    box-shadow: 0 1px 3px lightgray;
+    border-radius: 6px;
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+.reservation_form label {
+    margin-right: 2em;
+}
