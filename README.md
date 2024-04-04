@@ -1,26 +1,26 @@
-#Sklonuj repozytorium na swój lokalny komputer:
+1.Sklonuj repozytorium na swój lokalny komputer:
 
-git clone <URL_repozytorium>
+$git clone <URL_repozytorium>
 
-#Utwórz wirtualne środowisko Pythona:
+2.Utwórz wirtualne środowisko Pythona:
 
-python3 -m venv venv
+$python3 -m venv venv
 
-#Aktywuj wirtualne środowisko:
-source venv/bin/activate
+3.Aktywuj wirtualne środowisko:
+$source venv/bin/activate
 
-#Zainstaluj wymagane pakiety Pythona z pliku requirements.txt:
+4.Zainstaluj wymagane pakiety Pythona z pliku requirements.txt:
 
-pip install -r requirements.txt
+$pip install -r requirements.txt
 
-#Zastosuj migracje do bazy danych:
+5.Zastosuj migracje do bazy danych:
 
-python manage.py migrate
+$python manage.py migrate
 
-#Uruchom serwer deweloperski:
+6.Uruchom serwer deweloperski:
 
-python manage.py runserver
+$python manage.py runserver
 
-#Otwórz przeglądarkę internetową i przejdź pod adres:
+7.Otwórz przeglądarkę internetową i przejdź pod adres:
 
-http://localhost:8000
+$http://localhost:8000
